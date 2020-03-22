@@ -1,0 +1,70 @@
+<?php 
+
+class carro{
+
+    public $modelo;    
+        public $velocidade_maxima;
+            public $velocidade_atual;
+    
+public function carro($modelo,$velocidade_maxima){
+    
+    $this -> modelo = $modelo;
+    $this -> velocidade_maxima = $velocidade_maxima ; 
+    
+    echo "{$this -> setModelo()}\n"
+         $this->ligarCarro();
+            $this->acelerar();
+                $this->reduzir();
+                    $this->pararCarro();
+                        $this->desligarCarro();
+        
+}
+    
+      public function ligarCarro(){
+        
+          echo "Carro ligado \n";
+        
+    }
+    
+    
+    public function desligarCarro(){
+        
+        echo "Carro desligado \n";
+        
+    }
+    
+    public function acelerar(){
+    
+        $this -> velocidade_atual = $this -> velocidade_maxima;
+        
+            echo "Acelearando \n velocidade = {$this -> velocidade_atual} km/h \n";
+        
+  }
+
+    public function setModelo(){
+        
+        return $this -> modelo;
+        
+    }
+    
+    public function reduzir(){
+        
+        $this -> velocidade_atual = $this -> velocidade_atual/2;
+            
+            echo "Diminuindo a velocidade do carro! \n velocidade = {$this -> velocidade_atual} km/h \n";
+        
+    }
+    
+    public function pararCarro(){
+        
+        $this -> velocidade_atual = 0;
+        
+            echo "O carro está parado \n velocidade = {$this -> velocidade_atual} km/h \n";
+        
+        
+    }
+}
+
+$cr = new carro("Bugatti Veyron",100);
+
+?>
